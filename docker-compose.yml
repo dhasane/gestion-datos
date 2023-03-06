@@ -1,0 +1,18 @@
+version: '3.8'
+
+volumes:
+  postgresgd_volume:
+
+services:
+  postgres:
+    image: postgres
+    container_name: postgresgd
+    restart: always
+    environment:
+      POSTGRES_USER: postgresgd
+      POSTGRES_PASSWORD: Password
+      POSTGRES_DB: postgresgd
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgresgd_volume:/var/lib/postgresql/data/
