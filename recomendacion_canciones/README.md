@@ -2,35 +2,35 @@
 
 Deployment instructions:
 
-1. Install virtualenv: `pip install virtualenv` o `pip3 install virtualenv`.
+1. Install [poetry]( https://python-poetry.org/docs/#installation ).
 
-2. Create the new environment: `python -m venv env` o `python3 -m venv env`.
+2. Run `poetry install`.
 
-3. Activate the environment: `source env/bin/activate` (Mac/Linux) o `.\env\Scripts\activate` (Windows).
+3. Run `poetry run start`
 
-4. Install the dependencies: `pip install -r requirements.txt` o `pip3 install -r requirements.txt`. Para el caso de windows, borre la dependencia `uvloop==0.17.0` del archivo.
-
-5. Start the server: `uvicorn main:app --reload`.
-
-6. Testing the service using a tool like Postman:
+4. Testing the service using a tool like Postman:
 
 ```
-POST /predict HTTP/1.1
+POST /predict_by_user HTTP/1.1
 Host: 127.0.0.1:8000
 Content-Type: application/json
 
 [
 	{
-		"credit_score": 713,
-	    "country": "Spain",
-	    "gender": "Female",
-	    "age": 48,
-	    "tenure": 1,
-	    "balance": 163760.82,
-	    "products_number": 1,
-	    "credit_card": 0,
-	    "active_member": 0,
-	    "estimated_salary": 42117.90
+        "popularity": 0,
+        "explicit": 0,
+        "danceability": 0,
+        "energy": 0,
+        "key": 0,
+        "loudness": 0,
+        "mode": 0,
+        "speechiness": 0,
+        "acousticness": 0,
+        "instrumentalness": 0,
+        "liveness": 0,
+        "valence": 0,
+        "tempo": 0,
+        "time_signature": 0
 	}
 ]
 ```
