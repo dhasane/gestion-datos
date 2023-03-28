@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "recomendacion-canciones"
+version = "0.1.0"
+description = ""
+authors = ["Dhasane <danihas@live.com>"]
+readme = "README.md"
+packages = [{include = "recomendacion_canciones"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.95.0"
+pandas = "^1.5.3"
+joblib = "^1.2.0"
+jinja2 = "^3.1.2"
+uvicorn = "^0.21.1"
+
+[tool.poetry.scripts]
+start = "recomendacion_canciones.main:start"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
