@@ -1,6 +1,9 @@
 # Gestion de datos
 
-Deployment instructions:
+## prerequisites
+
+1. Run `docker compose up` using this config [docker-compose.yaml]( https://github.com/dhasane/gestion-datos/blob/main/docker-compose.yml ), this creates a container running Postgres.
+2. Run this [jupyter notebook]( https://github.com/dhasane/gestion-datos/blob/main/entrega.ipynb ), this cleans the data and stores it into the database. This notebook consumes two files artists.csv and tracks.csv.
 
 ## Installation
 
