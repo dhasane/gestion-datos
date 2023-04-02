@@ -16,9 +16,11 @@ uvicorn = "^0.21.1"
 annoy = "^1.17.1"
 sqlalchemy = "^2.0.7"
 psycopg2 = "^2.9.5"
+gradio = "^3.24.1"
 
 [tool.poetry.scripts]
 start = "recomendacion_canciones.wrapper:start"
+gradio = "recomendacion_canciones.gradio_run:GradioRun"
 
 [build-system]
 requires = ["poetry-core"]

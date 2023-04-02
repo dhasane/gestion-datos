@@ -29,15 +29,17 @@ class SongRec:
             print('training end')
         return annstr
 
-    def get_song_rec(self, annoy_path: str, song_id: str):
+    def load_annoy_config(self, path: str):
         annoy_loaded = AnnoyIndex(len(self.features), "euclidean")
-        annoy_loaded.load(annoy_path)
-        song = self.df[self.df['id'] == song_id].index
-        neighbors = annoy_loaded.get_nns_by_item(song, 10)
-        return self.df.loc[neighbors]
+        annoy_loaded.load(path)
+        return annoy_loaded
+
+    def get_song_rec(self, annoy_path: str, song_id: str):
+        song = self.df[self.df['id'] == song_id]
+        song_index, = song.index
+        neighbors = self.load_annoy_config(annoy_path).get_nns_by_item(song_index, 10)
+        return self.df.loc[neighbors].values
 
     def get_user_rec(self, annoy_path: str, user_vector):
-        annoy_loaded = AnnoyIndex(len(self.features), "euclidean")
-        annoy_loaded.load(annoy_path)
-        neighbors = annoy_loaded.get_nns_by_vector(user_vector, 10)
-        return self.df.loc[neighbors]
+        neighbors = self.load_annoy_config(annoy_path).get_nns_by_vector(user_vector, 10)
+        return self.df.loc[neighbors].values

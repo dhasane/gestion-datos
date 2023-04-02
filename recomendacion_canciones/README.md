@@ -1,15 +1,28 @@
-# Model serving tutorial (FastAPI version)
+# Gestion de datos
 
 Deployment instructions:
 
-1. Install [poetry]( https://python-poetry.org/docs/#installation ).
+## Installation
 
+1. Install [poetry]( https://python-poetry.org/ ).
 2. Run `poetry install`.
 
-3. Run `poetry run start`
+## Run the server
+There are two alternatives to running the server.
 
-4. Testing the service using a tool like Postman:
+### REST API
+Run `poetry run start`
 
+#### Testing the api
+
+##### Predict by song
+This receives a get request with the id of the song as a path parameter.
+```
+GET /predict_by_song/{song_id} HTTP/1.1
+```
+
+##### Predict by user
+This receives a post request with a json containing the information of the preferences from the user.
 ```
 POST /predict_by_user HTTP/1.1
 Host: 127.0.0.1:8000
@@ -35,4 +48,7 @@ Content-Type: application/json
 ]
 ```
 
-7. It is also possible to test it from the browser going to URL: http://localhost:8000/
+### Front
+Run `poetry run gradio`
+
+This will deploy the front using gradio.
