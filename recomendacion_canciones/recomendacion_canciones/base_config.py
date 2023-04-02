@@ -1,11 +1,9 @@
 from .rec_model import RecModel
-from .models import Tracks, load_sql_table
+from .db_models import Tracks, load_sql_table
 from .song_rec import SongRec
 
-# cols = [column.key for column in Tracks.__table__.columns]
-# print(cols)
+# todas
 # ['id', 'name', 'popularity', 'duration_ms', 'explicit', 'danceability', 'energy', 'key', 'loudness', 'mode', 'speechiness', 'acousticness', 'instrumentalness', 'liveness', 'valence', 'tempo', 'time_signature', 'mode_type', 'track_type', 'instrumental_type', 'live_type', 'valence_type', 'release_date']
-
 
 class BaseConfig:
 

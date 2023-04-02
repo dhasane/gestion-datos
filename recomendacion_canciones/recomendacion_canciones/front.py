@@ -1,7 +1,7 @@
 import gradio as gr
 from typing import List
 from .base_config import BaseConfig
-from .models import Tracks
+from .db_models import Tracks
 import jinja2
 
 TEMPLATE = jinja2.Template("""

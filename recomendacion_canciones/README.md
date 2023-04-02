@@ -14,7 +14,7 @@
 There are two alternatives to running the server.
 
 ### REST API
-Run `poetry run start`
+Run `poetry run rest`
 
 #### Testing the api
 
@@ -52,6 +52,6 @@ Content-Type: application/json
 ```
 
 ### Front
-Run `poetry run gradio`
+Run `poetry run front`
 
 This will deploy the front using gradio.

@@ -19,8 +19,8 @@ psycopg2 = "^2.9.5"
 gradio = "^3.24.1"
 
 [tool.poetry.scripts]
-start = "recomendacion_canciones.wrapper:start"
-gradio = "recomendacion_canciones.gradio_run:GradioRun"
+rest = "recomendacion_canciones.wrapper:start"
+front = "recomendacion_canciones.front:GradioRun"
 
 [build-system]
 requires = ["poetry-core"]
