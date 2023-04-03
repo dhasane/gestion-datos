@@ -1,5 +1,23 @@
 # Gestion de datos
 
+## integrantes 
+- Daniel Hamilton-Smith	
+- Juanita Caballero
+
+## alcance y caracteristicas
+El sistema realiza recomendacion de canciones con base a una canción seleccionada por el usuario. Alternativamente también se puede generar una recomendación con base el un perfil de usuario, aunque esto no está disponible desde el front.
+
+## organizacion repositorio
+
+recomendacion_canciones:
+- base_config.py: configuracion para entrenamiento y carga de modelo
+- db_models.py: modelos de base de datos
+- front.py: configuracion front
+- rec_model.py: modelo usado para la recomendación
+- rest.py: configuración para servidor rest
+- song_rec.py: entrenamiento del modelo
+- wrapper.py: inicializa servidor uvicorn
+
 ## prerequisites
 
 1. Run `docker compose up` using this config [docker-compose.yaml]( https://github.com/dhasane/gestion-datos/blob/main/docker-compose.yml ), this creates a container running Postgres.
